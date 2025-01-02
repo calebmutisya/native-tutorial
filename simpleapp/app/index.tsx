@@ -1,4 +1,5 @@
 import { View, Text, StyleSheet, ImageBackground } from 'react-native'
+import { Link } from 'expo-router'
 
 import icedCoffee from "@/assets/images/iced-coffee.png"
 import { text } from 'stream/consumers'
@@ -9,7 +10,8 @@ const app = () => {
       <ImageBackground source={icedCoffee}
        resizeMode="cover"
        style={styles.image}>
-        <Text style={styles.text}>Cofee Shop</Text>
+        <Text style={styles.title}>Coffee Shop</Text>
+        <Link href={"/explore"} style={styles.link}>Explore</Link>
       </ImageBackground>
     </View>
   )
@@ -31,11 +33,21 @@ const styles = StyleSheet.create({
     resizeMode: 'cover',
     justifyContent: 'center',
   },
-  text : {
+  title : {
     fontSize: 42,
     fontWeight: 'bold',
     textAlign: 'center',
     color: '#fff',
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    marginBottom: 120
+  },
+  link: {
+    color: 'white',
+    fontSize: 42,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    textDecorationLine: 'underline',
+    padding: 4,
   }
 })
